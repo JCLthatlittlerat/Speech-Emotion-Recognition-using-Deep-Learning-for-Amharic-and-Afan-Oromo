@@ -1,0 +1,2 @@
+# Speech-Emotion-Recognition-using-Deep-Learning-for-Amharic-and-Afan-Oromo
+This is a speech emotion recognition using deep learning for local languages. The specific languages used in this project is Amharic and Afan oromo which are widely used language in Ethiopia. The Learning method utilized in this projce it Deep Learning and semi-supervided Learning. The dataset are collected from different sources and used as one.
