@@ -1,0 +1,132 @@
+The pipeline of NLP:
+
+Text-preprocessing => Text-normalization => Word-embedding => Creating-model => Initializing-model => Training-model => Training-model => Evaluating-model.
+
+1. Text preprocessing: changes unstructured data into structured one by;
+=> changing words to lowercase
+=> removing HMTL tags
+=> removing special characters
+# text preprocessing is followed by 'Text Normalization'
+
+2. Text Normalization: which converting a word to it's base form like running, runs => run
+
+3. Word embedding: is the process of changing words(or texts) into numerical value so that computer can understand them. There may be different numerical representation of the same word(text).
+
+4.Create model: here the model depends on the type of the dataset you use to training the model. some models LSTM, RNN, BERT, etc
+
+5. Initialize model: here the model we have created is initialized; it can be our model or a pretrained model.
+
+
+6. Train model: is simply learning the model from the dataset you have provided; here the dataset must be preprocessed.
+
+7. Test & Evaluate model: predict an output and then compare with the actual you have in your dataset and evaluate the model.
+
+=======================================================================
+#The standard NLP pipeline
+Data-acquisition => Text-cleaning => Pre-processing => Feature-engineering => Model-building => Evaluation => Deployment
+
+1. Data-acquisition:
+- public data
+- web scrabing
+
+2. Text-cleaning:
+- removing irrelevant information, merging some similar informations
+- unicoder normalization
+- Regex
+- spell checking
+
+3. Pre-processing
+- tokenization: paragraph tokenization=> paragraph ot sentences; sentence tokenization=>sentences to words
+- stemming: converting words to their base word by removing prefixes and postfixes
+- lemmatization: converting words to their base word by applying grammar rules
+- POS tagging
+- Named Entity Recognization
+
+4. Feature engineering
+4.1 Traditional approach:
+	- One Hot Encoder
+	- Bag of Words
+	- Bag of n-grams
+	- TF-IDF
+4.2 Neural Approach:
+	- Continuous Bag of Word
+	- Word2Vec
+	- Glove
+	- fasttext
+
+5. Model building:
+5.1 Heuristic Based Model:
+	- Lexicon-Based-Sentiment-Analysis
+	- wordnet
+5.2 Machine Learning model
+	- Naice Bayes
+	- SVM(support vector machine)
+	- Hidden Markov Model
+	- Conditional Random Fields
+5.3 Deep Learning Model:
+	- RNN
+	- CNN
+	- LSTM
+	- GRU(Gated Recurrent Unit)
+
+6. Evaluation:
+- Classification: Accuracy, Precision, Recall, F1-score, AUC,
+- Sequence Labelling: F1-score,
+- Information Retrieval: Mean Reciprocal rank(MRR), Mean Average Precision(MAP),
+- Text summarization: ROUGE
+- Regression [Stock Market Price Predictions, Temprature Predictions]: Root Mean Square Error, Mean Absolute Percentage Error.
+
+7. Deployment
+========================================================================
+#Some sources of dataset that contain difference utterances from different actors and participants;
+1. Toronto emotional speech set (TESS): from kaggle(https://www.kaggle.com/datasets/ejlok1/toronto-emotional-speech-set-tess?select=TESS+Toronto+emotional+speech+set+data)
+- only female actors, 2800 files, 
+- 7 emotions
+
+2. Surrey Audio-Visual Expressed Emotion (SAVEE): from kaggle(https://www.kaggle.com/datasets/ejlok1/surrey-audiovisual-expressed-emotion-savee)
+- only male actors, 480 files, 
+- 7 emotions
+
+3. JL corpus: from kaggle(https://www.kaggle.com/datasets/tli725/jl-corpus)
+- an equal distribution of 4 long vowels in New Zealand English
+- 10 emotion(5 primary + 5 secondary emotions)
+
+(#source: Combined Dataset for Speech Emotion Recognition (SER)[https://github.com/standing-o/Combined_Dataset_for_Speech_Emotion_Recognition?tab=readme-ov-file])
+
+---------------------------LOCAL DATASET------------------------------------
+#Some sources for local languages that the machine need to be trained;
+1. Amharic Speech Emotion Dataset (ASED): from github(https://github.com/Ethio2021/ASED_V1/tree/main)
+- 5 emotions: Neutral, Fearful, Happy, Sad, and Angry. 
+- overall 2,474 recordings.
+@reference: https://dl.acm.org/doi/10.1145/3529759
+
+2. Afaan Oromo Text to Speech Synthesis dataset: official website(https://data.mendeley.com/datasets/mpy85ns82z/1)
+- is not labelled, and randomly gathered from different social media and mass medias.
+============================================================================
+#Model selection
+=> Available models:
+	1. VGGb,
+	2. CNN-BiLSTM,
+	3. AlexNet, and 
+	4. ResNet50.
+
+#Model Evaluation:
+	#For optimal results on limited-resource Ethiopian languages, using CNN-BiLSTM with spectrograms or MFCCs as input is recommended. 
+	1. CNN-BiLSTM (Recommended): 
+		a. Best for capturing spatial (spectral) features with CNNs and temporal dependencies with BiLSTM.
+		b. Best for capturing spatial (frequency) and temporal (time-sequential) features.
+		c. Linguistic Suitability: BiLSTM is highly recommended for Afan Oromo, as it outperforms other deep learning models for sequence processing.
+		
+	2. ResNet50: 
+		a. A strong contender, particularly if the dataset is large enough to prevent overfitting, as its residual connections are highly effective. However, CNN-BiLSTM is generally better for speech temporal dynamics.
+		b. Excellent for image-like feature analysis, but may be overkill and slow for small, limited-resource language speech datasets.
+	3. VGGb: 
+		a. A good baseline variant of VGG developed for Amharic, but likely less robust than CNN-BiLSTM for complex emotional, time-based features.
+		b. Good for deep feature extraction but requires significant data and is computationally heavy.
+	4. AlexNet: 
+		a. Generally outdated for speech tasks compared to modern, deeper architectures
+		b. Older, less accurate compared to deeper networks like ResNet or VGG.
+
+@For you information: 
+	Spatial features: refer to local, image-like patterns in spectrograms (time-frequency relationships) that identify emotional cues, usually extracted via Convolutional Neural Networks (CNNs).
+	Temporal dependencies refer to how emotional content evolves over time across speech frames, typically modeled using RNNs, LSTM, or GRU to understand context.
