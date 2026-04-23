@@ -35,3 +35,17 @@ The notebook was written for a Kaggle-style path. For local runs, point `data_pa
 1. Fork the repository and create a branch for your changes.
 2. Run the environment setup above and verify the notebook or scripts you touch.
 3. Open a pull request with a short description of your changes.
+
+## New contribution: simple project website
+
+A basic website is included to make the project easier to understand and contribute to.
+
+### Files added
+- `index.html` - project landing page
+- `styles.css` - visual styling
+- `app.js` - dynamic rendering for pipeline, datasets, and model cards
+
+### How to run website locally
+1. Open the project folder.
+2. Double-click `index.html` (or run it with a static file server).
+3. Use the page sections to review pipeline steps, dataset links, and candidate models.

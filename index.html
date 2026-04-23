@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speech Emotion Recognition | Amharic and Afan Oromo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="top-nav">
+      <h1>SER for Amharic & Afan Oromo</h1>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#pipeline">Pipeline</a>
+        <a href="#datasets">Datasets</a>
+        <a href="#models">Models</a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <p>
+        A simple project website for speech emotion recognition research in
+        Ethiopian languages.
+      </p>
+      <button id="statusButton" type="button">Check Project Status</button>
+      <p id="statusText" class="status-text" aria-live="polite"></p>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="card">
+      <h2>Project Goal</h2>
+      <p>
+        Build robust deep learning models that identify emotions from speech in
+        Amharic and Afan Oromo. This page connects key project knowledge into a
+        single place so contributors can quickly understand what to improve.
+      </p>
+    </section>
+
+    <section id="pipeline" class="card">
+      <h2>NLP + Speech Pipeline</h2>
+      <ol id="pipelineList"></ol>
+    </section>
+
+    <section id="datasets" class="card">
+      <h2>Dataset Sources</h2>
+      <ul id="datasetList"></ul>
+      <a href="nlp-pipeline-and-dataset-link.txt" target="_blank" rel="noreferrer">
+        Open full dataset and pipeline notes
+      </a>
+    </section>
+
+    <section id="models" class="card">
+      <h2>Model Candidates</h2>
+      <div id="modelGrid" class="model-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Contributing baseline website for the project.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
